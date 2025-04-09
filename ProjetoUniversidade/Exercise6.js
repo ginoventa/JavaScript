@@ -1,25 +1,25 @@
-/*Calculator in JS*/
-function sum(a, b){
-    return a+b; 
-}
-
-function divide(a, b){
-    if(b!=0){
-        return a/b; 
-    }else{
-        return "Erro. Divisao invalida!"; 
+var result
+function performOperation(num1, num2, operation){
+    switch(operation.toLowerCase()){
+        case "sum":
+            return result = num1+num2; 
+        case "division":
+            if(num2!=0){
+                return result = num1/num2; 
+            }else{
+                return "Error. Invalid division!"; 
+            }
+        case "subtract":
+            return result = num1-num2; 
+        case "multiply":
+            return result = num1*num2; 
+        default: 
+            return "Invalid operation!"
     }
 }
 
-function subtract(a, b){
-    return a-b; 
-}
-
-function multiply(a, b){
-    return a*b; 
-}
-
-console.log(sum(1,1))
-console.log(divide(3,0))
-console.log(subtract(1,1))
-console.log(multiply(4,3))
+console.log(performOperation(5,2,"sum"))
+console.log(performOperation(5,2,"division"))
+console.log(performOperation(5,2,"subtract"))
+console.log(performOperation(5,2,"multiply"))
+console.log(performOperation(5,2,"operation"))
