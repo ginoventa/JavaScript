@@ -1,0 +1,25 @@
+Body{
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+h1, h3, label{
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+#counter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+button{
+    background: lightblue;
+    padding: 10px;
+    margin: 10px;
+    border: 2px none;
+    border-radius: 5px;
+}
