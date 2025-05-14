@@ -1,0 +1,71 @@
+/* Global Styles */
+* {
+    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Arial', sans-serif; /* Sets a clean sans-serif font */
+    background-color: #f4f4f4; /* Light grey background for subtle contrast */
+    color: #333; /* Dark text color for readability */
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    height: 100vh; /* Full viewport height */
+}
+/* Title Styles */
+h1, span {
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center align the title */
+}
+/* Converter Container Styles */
+#counter {
+    background-color: #fff; /* White background for the converter */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* Inner spacing */
+    text-align: center; /* Center align the inner contents */
+}
+/* Number Display Styles */
+#number {
+    font-size: 3rem; /* Large font size for visibility */
+    margin-bottom: 20px; /* Space below the number display */
+}
+/* Button Styles */
+#buttons {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    gap: 10px; /* Space between elements */
+    align-items: center; /* Center align the buttons */
+}
+/* Radio Button Styles */
+input[type="radio"] {
+    margin-right: 10px; /* Space between radio buttons and labels */
+}
+/* Button Styles */
+button {
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Slightly rounded button corners */
+    padding: 10px 20px; /* Inner spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Standard font size */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+/* Button Hover Effect */
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Stack elements vertically on small screens */
+    }
+    #counter {
+        width: 90%; /* Limit width on smaller screens */
+    }
+    h1 {
+        font-size: 2rem; /* Slightly smaller title on smaller screens */
+    }
+}
