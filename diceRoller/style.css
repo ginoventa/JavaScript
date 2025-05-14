@@ -23,6 +23,9 @@ img{
     height: auto;
     margin-bottom: 20px;
 }
+div{
+    gap: 20px;
+}
 
 /* Converter Container Styles */
 #counter {

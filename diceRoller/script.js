@@ -1,6 +1,7 @@
 function generateNumber(numberOfRolls) {
     var randomNumber = []
     var images = [];
+    document.getElementById("images").innerHTML = "";
     var imageContainer = document.getElementById("images");
 
     for(let i = 0; i < numberOfRolls; i++) {
@@ -35,6 +36,10 @@ function generateNumber(numberOfRolls) {
 
 function rollDice(){
     let numbersRolls = Number(document.getElementById("input").value);
+    if (numbersRolls < 1 || numbersRolls > 6) {
+        alert("Please enter a number above 1");
+        return;
+    }
     let arrayOfNumbers = generateNumber(numbersRolls);
     document.getElementById("number").textContent = "You rolled: " + arrayOfNumbers.join(", ");
 }

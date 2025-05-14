@@ -1,113 +1,77 @@
-body {
-    background: linear-gradient(135deg, #f0f4ff 0%, #c7d2fe 100%);
-    font-family: 'Segoe UI', 'Courier New', Courier, monospace;
+/* Global Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-
-h1 {
-    color: #4f46e5;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Ensures column layout */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+/* Title Styles */
+h1{
+    margin-bottom: 20px;
     text-align: center;
-    font-size: 2.8em;
-    margin-top: 50px;
-    letter-spacing: 2px;
-    text-shadow: 1px 2px 8px #c7d2fe;
 }
-
-form, .controls {
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    padding: 40px 30px 30px 30px;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-}
-
-.input-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    gap: 8px;
-}
-
-input[type="checkbox"], input[type="radio"] {
-    accent-color: #6366f1;
-    width: 28px;
-    height: 28px;
-    margin-right: 0;
-    vertical-align: middle;
-    cursor: pointer;
-    transition: accent-color 0.2s;
-}
-
-label {
-    font-size: 1.5em;
-    color: #374151;
-    margin-bottom: 10px;
-    margin-left: 8px;
-    cursor: pointer;
-    user-select: none;
-    transition: color 0.2s;
-}
-
-input[type="checkbox"]:checked + label,
-input[type="radio"]:checked + label {
-    color: #6366f1;
-    font-weight: bold;
-}
-
-#submit {
-    background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
-    color: #fff;
-    border: none;
+/* Converter Container Styles */
+div{
+    background-color: #fff;
     border-radius: 8px;
-    padding: 16px 36px;
-    font-size: 1.2em;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px #c7d2fe;
-    margin-top: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
 }
-
-#submit:hover {
-    background: linear-gradient(90deg, #818cf8 0%, #6366f1 100%);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 4px 16px #a5b4fc;
-}
-
-#submit:active {
-    background: #6366f1;
-    transform: scale(0.98);
-}
-
-.like,.checkbox,.subscribe{
+input,label{
     display: flex;
     flex-direction: row;
 }
-
-@media (max-width: 500px) {
+/* Number Display Styles */
+#number {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+/* Button Styles */
+#buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+/* Button Styles */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+/* Button Hover Effect */
+button:hover {
+    background-color: #0056b3;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    div {
+        width: 90%;
+    }
     h1 {
-        font-size: 2em;
-        margin-top: 30px;
-    }
-    form, .controls {
-        padding: 20px 5vw;
-        margin-top: 20px;
-    }
-    label {
-        font-size: 1.1em;
-    }
-    #submit {
-        padding: 10px 18px;
-        font-size: 1em;
+        font-size: 2rem; /* Slightly smaller title on smaller screens */
     }
 }
-
