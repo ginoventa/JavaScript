@@ -1,44 +1,38 @@
-function generateNumber(numberOfRolls) {
-    var randomNumber = []
-    var images = [];
-    var imageContainer = document.getElementById("images");
+function passwordGenerator(){
+    let digitQuantity = document.getElementById("input").value;
+    let password = "";
 
-    for(let i = 0; i < numberOfRolls; i++) {
-        randomNumber.push(Math.floor(Math.random() * 6) + 1);
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let digits = "0123456789";
+    let symbols = "!@#$%^&*()_+[]{}|;:,.<>?";
 
-        switch (randomNumber[i]) {
+    for(let i = 0; i<digitQuantity; i++){
+        let category = Math.floor(Math.random() * 4);
+
+        switch(category){
+            case 0:
+                password += alphabet[Math.floor(Math.random() * alphabet.length)];
+                break;
             case 1:
-                images.push("https://game-icons.net/icons/ffffff/000000/1x1/delapouite/dice-six-faces-one.svg ");
+                password += digits[Math.floor(Math.random() * digits.length)];
                 break;
             case 2:
-                images.push("https://game-icons.net/icons/ffffff/000000/1x1/delapouite/dice-six-faces-two.svg ");
+                password += symbols[Math.floor(Math.random() * symbols.length)];
                 break;
             case 3:
-                images.push("https://game-icons.net/icons/ffffff/000000/1x1/delapouite/dice-six-faces-three.svg ");
-                break;
-            case 4:
-                images.push("https://game-icons.net/icons/ffffff/000000/1x1/delapouite/dice-six-faces-four.svg ");
-                break;
-            case 5:
-                images.push("https://game-icons.net/icons/ffffff/000000/1x1/delapouite/dice-six-faces-five.svg ");
-                break;
-            case 6:
-                images.push("https://game-icons.net/icons/ffffff/000000/1x1/delapouite/dice-six-faces-six.svg ");
+                password += alphabet.toUpperCase()[Math.floor(Math.random() * alphabet.length)];
                 break;
         }
-        var img = document.createElement("img");
-        img.src = images[i];
-        imageContainer.appendChild(img);
     }
-    return randomNumber;
+
+    document.getElementById("password").innerHTML = password;
+    return password;
 }
 
-function rollDice(){
-    let numbersRolls = Number(document.getElementById("input").value);
-    let arrayOfNumbers = generateNumber(numbersRolls);
-    document.getElementById("number").textContent = "You rolled: " + arrayOfNumbers.join(", ");
-}
 
-document.getElementById("generator").onclick= function(){
-    rollDice();
+document.getElementById("generator").onclick = function(){
+    let passwordPaste = passwordGenerator();
+    document.getElementById("copier").onclick = function(){
+        navigator.clipboard.writeText(passwordPaste);
+    }
 }
